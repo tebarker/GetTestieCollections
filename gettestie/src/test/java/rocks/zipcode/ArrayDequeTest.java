@@ -11,17 +11,17 @@ import java.util.Deque;
 public class ArrayDequeTest {
 
     @Test
-    public void arrayDequeAddTest(){
-        Deque <gettestie.src.main.java.rocks.zipcode.Person> familyLog = new ArrayDeque<>();
+    public void arrayDequeAddTest() {
+        Deque<gettestie.src.main.java.rocks.zipcode.Person> familyLog = new ArrayDeque<>();
 
         //GIVEN
         Person Gene = new Person("Gene", 1962);
         Person Amanda = new Person("Amanda", 1965);
-        Person Tome = new Person ("Tom", 1992);
-        Person Rachel = new Person("Rachel",1999);
+        Person Tome = new Person("Tom", 1992);
+        Person Rachel = new Person("Rachel", 1999);
         Person Colton = new Person("Colton", 1995);
-        Person Adrian = new Person ("Adrian", 2001);
-        Person Gariel = new Person ("Gariel", 1932);
+        Person Adrian = new Person("Adrian", 2001);
+        Person Gariel = new Person("Gariel", 1932);
 
         //WHEN
         familyLog.addFirst(Gariel);
@@ -32,7 +32,8 @@ public class ArrayDequeTest {
 
         //THEN
         Assert.assertEquals(expectedSize, actualSize);
- }
+    }
+
     @Test
     public void arrayDequeGetTest() {
         Deque<gettestie.src.main.java.rocks.zipcode.Person> familyLog = new ArrayDeque<>();
@@ -51,24 +52,22 @@ public class ArrayDequeTest {
 
         //THEN
         Assert.assertEquals(expectedFirst, actualFirst);
-        Assert.assertEquals(expectedLast,actualLast);
-
-
+        Assert.assertEquals(expectedLast, actualLast);
 
 
     }
 
     @Test
-    public void arrayDequePeekTest(){
+    public void arrayDequePeekTest() {
 
         //GIVEN
         Person Gene = new Person("Gene", 1962);
         Person Amanda = new Person("Amanda", 1965);
-        Person Tome = new Person ("Tom", 1992);
-        Person Rachel = new Person("Rachel",1999);
+        Person Tome = new Person("Tom", 1992);
+        Person Rachel = new Person("Rachel", 1999);
         Person Colton = new Person("Colton", 1995);
-        Person Adrian = new Person ("Adrian", 2001);
-        Person Gariel = new Person ("Gariel", 1932);
+        Person Adrian = new Person("Adrian", 2001);
+        Person Gariel = new Person("Gariel", 1932);
 
         //WHEN
         Deque<Person> familyLog = new ArrayDeque<>();
@@ -87,7 +86,35 @@ public class ArrayDequeTest {
         Assert.assertEquals(expectedFirstElement, actualFirstElement);
 
 
-
     }
 
+    @Test
+    public void arrayDequeContainsTest() {
+
+        //GIVEN
+        Person Gene = new Person("Gene", 1962);
+        Person Amanda = new Person("Amanda", 1965);
+        Person Tome = new Person("Tom", 1992);
+        Person Rachel = new Person("Rachel", 1999);
+        Person Colton = new Person("Colton", 1995);
+        Person Adrian = new Person("Adrian", 2001);
+        Person Gariel = new Person("Gariel", 1932);
+
+        //WHEN
+        Deque<Person> familyLog = new ArrayDeque<>();
+        familyLog.add(Gene);
+        familyLog.add(Amanda);
+        familyLog.add(Tome);
+        familyLog.add(Rachel);
+        familyLog.add(Colton);
+        familyLog.add(Adrian);
+        familyLog.add(Gariel);
+
+
+        Boolean containsElement = familyLog.contains(Adrian);
+
+        //THEN
+        Assert.assertTrue(containsElement);
+
+    }
 }
